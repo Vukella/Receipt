@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62E57431-362F-446E-A896-927CC2F54C37}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication.cs" />
+    <Compile Include="Forms\Evidencije\FrmEvidencijaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidencije\FrmEvidencijaDetalji.Designer.cs">
+      <DependentUpon>FrmEvidencijaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Evidencije\FrmEvidencije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Evidencije\FrmEvidencije.Designer.cs">
+      <DependentUpon>FrmEvidencije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMode.cs" />
+    <Compile Include="Forms\Masina\FrmMasinaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Masina\FrmMasinaDetalji.Designer.cs">
+      <DependentUpon>FrmMasinaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Masina\FrmMasine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Masina\FrmMasine.Designer.cs">
+      <DependentUpon>FrmMasine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmReceptDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmReceptDetalji.Designer.cs">
+      <DependentUpon>FrmReceptDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmRecepti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmRecepti.Designer.cs">
+      <DependentUpon>FrmRecepti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmStavkaReceptaDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Recepti\FrmStavkaReceptaDetalji.Designer.cs">
+      <DependentUpon>FrmStavkaReceptaDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sastojci\FrmSastojakDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sastojci\FrmSastojakDetalji.Designer.cs">
+      <DependentUpon>FrmSastojakDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sastojci\FrmSastojci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sastojci\FrmSastojci.Designer.cs">
+      <DependentUpon>FrmSastojci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiController\LoginGuiController.cs" />
+    <Compile Include="GuiController\MainCoordinator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UCDefaultMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDefaultMain.Designer.cs">
+      <DependentUpon>UCDefaultMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCEvidencija\UCSingleEvidencija.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCEvidencija\UCSingleEvidencija.Designer.cs">
+      <DependentUpon>UCSingleEvidencija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMode.cs" />
+    <EmbeddedResource Include="Forms\Evidencije\FrmEvidencijaDetalji.resx">
+      <DependentUpon>FrmEvidencijaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Evidencije\FrmEvidencije.resx">
+      <DependentUpon>FrmEvidencije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Masina\FrmMasinaDetalji.resx">
+      <DependentUpon>FrmMasinaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Masina\FrmMasine.resx">
+      <DependentUpon>FrmMasine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recepti\FrmReceptDetalji.resx">
+      <DependentUpon>FrmReceptDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recepti\FrmRecepti.resx">
+      <DependentUpon>FrmRecepti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Recepti\FrmStavkaReceptaDetalji.resx">
+      <DependentUpon>FrmStavkaReceptaDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sastojci\FrmSastojakDetalji.resx">
+      <DependentUpon>FrmSastojakDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sastojci\FrmSastojci.resx">
+      <DependentUpon>FrmSastojci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\UCEvidencija\UCSingleEvidencija.resx">
+      <DependentUpon>UCSingleEvidencija.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{A23A8E72-B066-4F33-A698-9AEF70BA4082}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\UCMasina\" />
+    <Folder Include="UserControls\UCRecept\" />
+    <Folder Include="UserControls\UCSastojak\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

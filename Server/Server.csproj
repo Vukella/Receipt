@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5132C70-9C69-4E54-B639-CA8AF727447D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientHandler.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="FrmServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmServer.Designer.cs">
+      <DependentUpon>FrmServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="SystemOperation\SOEvidencija\KreirajEvidencijuSO.cs" />
+    <Compile Include="SystemOperation\SOEvidencija\NadjiEvidencijeSO.cs" />
+    <Compile Include="SystemOperation\SOEvidencija\ObrisiEvidencijuSO.cs" />
+    <Compile Include="SystemOperation\SOEvidencija\UcitajEvidencijuSO.cs" />
+    <Compile Include="SystemOperation\SOEvidencija\UcitajListuEvidencijaSO.cs" />
+    <Compile Include="SystemOperation\SOLogin\LoginSO.cs" />
+    <Compile Include="SystemOperation\SOMasina\KreirajMasinuSO.cs" />
+    <Compile Include="SystemOperation\SOMasina\NadjiMasineSO.cs" />
+    <Compile Include="SystemOperation\SOMasina\ObrisiSastojakSO.cs" />
+    <Compile Include="SystemOperation\SOMasina\UcitajListuMasinaSO.cs" />
+    <Compile Include="SystemOperation\SOMasina\UcitajMasinuSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\IzmeniStavkuReceptaSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\KreirajStavkuReceptaSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\NadjiStavkeReceptaSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\ObrisiStavkuReceptaSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\UcitajListuStavkiReceptaSO.cs" />
+    <Compile Include="SystemOperation\SOStavkaRecepta\UcitajStavkuReceptaSO.cs" />
+    <Compile Include="SystemOperation\SORecept\IzmeniReceptSO.cs" />
+    <Compile Include="SystemOperation\SORecept\KreirajReceptSO.cs" />
+    <Compile Include="SystemOperation\SORecept\NadjiRecepteSO.cs" />
+    <Compile Include="SystemOperation\SORecept\ObrisiReceptSO.cs" />
+    <Compile Include="SystemOperation\SORecept\UcitajListuRecepataSO.cs" />
+    <Compile Include="SystemOperation\SORecept\UcitajReceptSO.cs" />
+    <Compile Include="SystemOperation\SOSastojak\IzmeniSastojakSO.cs" />
+    <Compile Include="SystemOperation\SOSastojak\KreirajSastojakSO.cs" />
+    <Compile Include="SystemOperation\SOSastojak\NadjiSastjokeSO.cs" />
+    <Compile Include="SystemOperation\SOSastojak\UcitajListuSastojakaSO.cs" />
+    <Compile Include="SystemOperation\SOSastojak\UcitajSastojakSO.cs" />
+    <Compile Include="SystemOperation\SystemOperationBase.cs" />
+    <EmbeddedResource Include="FrmServer.resx">
+      <DependentUpon>FrmServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{A23A8E72-B066-4F33-A698-9AEF70BA4082}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBBroker\DBBroker.csproj">
+      <Project>{A8264EC1-0744-48BB-BE8D-DB4FB6207B48}</Project>
+      <Name>DBBroker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
